@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Created on Saturday Mar  26 21:52:36 2016
-@author: Gr8_Adakron
+@author: Gr8_Adakrklon
 """
+import random
 import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from collections import defaultdict
+
 class_value={}
 coloumn={}
 data=[]
@@ -116,9 +121,33 @@ def print_dict_as_table(dict):
     print(df)
 
 def main():
-    import csv
-    with open('tennis.csv') as csvfile:
-        reader = csv.DictReader(csvfile)
+    
+Outlook = ["Sunny", "Overcast","Rain"]
+Temperature = ["Hot", "Mild","Cool"]
+Humidity = ["High","Normal"]
+Wind = ["Strong", "Weak"]
+PlayTennis=["Yes","No"]
+Play = []
+Play.append(Outlook)
+Play.append(Temperature)
+Play.append(Humidity)
+Play.append(Wind)
+Play.append(PlayTennis)
+reader = [  ["Sunny","Hot","High","Weak","No"],
+          ["Sunny","Hot","High","Strong","No"],
+          ["Overcast","Hot","High","Weak","Yes"],
+          ["Rain","Mild","High","Weak","Yes"],
+          ["Rain","Cool","Normal","Weak","Yes"],
+          ["Rain","Cool","Normal","Strong","No"],
+          ["Overcast","Cool","Normal","Strong","Yes"],
+          ["Sunny","Mild","High","Weak","No"],
+          ["Sunny","Cool","Normal","Weak","Yes"],
+          ["Rain","Mild","Normal","Weak","Yes"],
+          ["Sunny","Mild","Normal","Strong","Yes"],
+          ["Overcast","Mild","High","Strong","Yes"],
+          ["Overcast", "Hot", "Normal", "Weak", "Yes"],
+          ["Rain","Mild","High","Strong","No"],
+          ]
         sr_no=1
         for row in reader:
             #print('%s'%(row))
